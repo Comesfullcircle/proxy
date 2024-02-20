@@ -21,7 +21,6 @@ public class BeanPostProcessorConfig {
     @Bean
     public PackageLogTracePostProcessor logTracePostProcessor(LogTrace logTrace) {
         return new PackageLogTracePostProcessor("hello.proxy.app", getAdvisor(logTrace));
-        //
     }
 
     private Advisor getAdvisor(LogTrace logTrace) {
