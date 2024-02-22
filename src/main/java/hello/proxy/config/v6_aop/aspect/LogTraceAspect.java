@@ -19,7 +19,7 @@ public class LogTraceAspect {
         this.logTrace = logTrace;
     }
 
-    @Around("execution(* hello.proxy.app..*(..))")
+    @Around("execution(* hello.proxy.app..*(..))" ) //포인트 컷 :"execution(* hello.proxy.app..*(..))"
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
         TraceStatus status = null;
         try {
@@ -36,4 +36,6 @@ public class LogTraceAspect {
             throw e;
         }
     }
+    // public 부터 {}사이의 값: advice 어드바이스
+    // @Around 부터 public {} 값들 합쳐서 advisor 어드바이저라 칭함
 }
